@@ -27,3 +27,12 @@ AND “Gandalf” se avaliou com “MPA” em todas as metas
 AND “Gui” fez sua auto-avaliação com notas iguais ao do professor em todas as metas.
 When Eu vou conferir se existe discrepância
 Then É mostrado que existem zero discrepância.
+
+Quando há discrepância
+Given: Que todos os alunos já fizeram a auto-avaliação.
+AND “Craudio” se avaliou com “MA” na meta “Entender conceitos de requisitos” maior que a do professor
+AND “JardimDoÉden” se avaliou com notas iguais as notas do professor
+AND “Cardoso” fez sua auto-avaliação com notas superiores em mais de 25% das metas
+When Eu vou conferir se existe discrepância
+Then É mostrado que existe
+AND  o aluno “Cardoso” está na lista com a nota marcada.
