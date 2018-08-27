@@ -20,4 +20,10 @@ When: O usuário preencher corretamente com todos os pontos corretos
 And Submeter seu input 
 Then: As informações ficarão salvas no servidor.
 
-
+Scenario: Nenhuma discrepância
+Given: Que todos os alunos já fizeram a auto-avaliação.
+AND “Mayru” se avaliou com “MA” na meta “Entender conceitos de requisitos”
+AND “Gandalf” se avaliou com “MPA” em todas as metas
+AND “Gui” fez sua auto-avaliação com notas iguais ao do professor em todas as metas.
+When Eu vou conferir se existe discrepância
+Then É mostrado que existem zero discrepância.
