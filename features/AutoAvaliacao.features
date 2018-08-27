@@ -8,6 +8,7 @@ Segunda alteração da feature:
 R- Se é pra mostrar mais uma foto de como ficaria a tela do exercício anterior, mas o que eu imaginei era que o aluno que tivesse essa discrepância seria notificado, e a nota na qual há será destacada. E pra ele concluir a auto-avaliação ele teria que alterar a nota.
 
 Cenários da primeira feature:
+--Bem Sucedida--
 Scenario: Inserção de Nota(GUI)
 Given: Dado que o aluno “Mayru” esteja na tabela de notas
 When: Eu preencher na tabela todos as notas
@@ -19,6 +20,20 @@ Given: Dado que na tabela só tem as notas dos professores
 When: O usuário preencher corretamente com todos os pontos corretos
 And Submeter seu input 
 Then: As informações ficarão salvas no servidor.
+
+--Mal sucedida--
+Scenario: Inserção de Nota na tabela
+Given: Dado que o aluno esteja na tabela de notas
+When: Eu preencho apenas algumas metas com notas
+And tentar enviar  ao final 
+Then: Vai aparecer uma mensagem de “Erro na submissão, checar notas”.
+
+Scenario: Inserção de Nota
+Given: Dado que na tabela só tem as notas dos professores
+When: O usuário preencher de forma incorreta
+And Submeter seu input 
+Then: As informações não ficarão salvas no servidor.
+
 
 Cenários da segunda feature:
 Scenario: Nenhuma discrepância
