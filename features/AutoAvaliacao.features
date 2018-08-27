@@ -34,8 +34,8 @@ When: O usuário preencher de forma incorreta
 And Submeter seu input 
 Then: As informações não ficarão salvas no servidor.
 
-
 Cenários da segunda feature:
+
 Scenario: Nenhuma discrepância
 Given: Que todos os alunos já fizeram a auto-avaliação.
 AND “Mayru” se avaliou com “MA” na meta “Entender conceitos de requisitos”
@@ -50,4 +50,5 @@ AND “Craudio” se avaliou com “MA” na meta “Entender conceitos de requi
 AND “JardimDoÉden” se avaliou com notas iguais as notas do professor
 AND “Cardoso” fez sua auto-avaliação com notas superiores em mais de 25% das metas
 When Eu vou conferir se existe discrepância
-
+Then É mostrado que existe
+AND  o aluno “Cardoso” está na lista com a nota marcada.
