@@ -1,0 +1,38 @@
+Primeira feature:
+Feature: Auto-Avaliação
+As a Aluno matriculado
+I want to adicionar e modificar nota
+So that Eu possa gerar minha auto-avaliação
+
+Segunda alteração da feature:
+R- Se é pra mostrar mais uma foto de como ficaria a tela do exercício anterior, mas o que eu imaginei era que o aluno que tivesse essa discrepância seria notificado, e a nota na qual há será destacada. E pra ele concluir a auto-avaliação ele teria que alterar a nota.
+
+Cenários da primeira feature:
+Scenario: Inserção de Nota(GUI)
+Given: Dado que o aluno “Mayru” esteja na tabela de notas
+When: Eu preencher na tabela todos as notas
+And enviar ao final 
+Then: Vai aparecer uma mensagem de “Inserção bem sucedida”.
+
+Scenario: Inserção de Nota
+Given: Dado que na tabela só tem as notas dos professores
+When: O usuário preencher corretamente com todos os pontos corretos
+And Submeter seu input 
+Then: As informações ficarão salvas no servidor.
+
+Cenários da segunda feature:
+Scenario: Nenhuma discrepância
+Given: Que todos os alunos já fizeram a auto-avaliação.
+AND “Mayru” se avaliou com “MA” na meta “Entender conceitos de requisitos”
+AND “Gandalf” se avaliou com “MPA” em todas as metas
+AND “Gui” fez sua auto-avaliação com notas iguais ao do professor em todas as metas.
+When Eu vou conferir se existe discrepância
+Then É mostrado que existem zero discrepância.
+
+Quando há discrepância
+Given: Que todos os alunos já fizeram a auto-avaliação.
+AND “Craudio” se avaliou com “MA” na meta “Entender conceitos de requisitos” maior que a do professor
+AND “JardimDoÉden” se avaliou com notas iguais as notas do professor
+AND “Cardoso” fez sua auto-avaliação com notas superiores em mais de 25% das metas
+When Eu vou conferir se existe discrepância
+
