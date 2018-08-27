@@ -52,3 +52,7 @@ AND “Cardoso” fez sua auto-avaliação com notas superiores em mais de 25% d
 When Eu vou conferir se existe discrepância
 Then É mostrado que existe
 AND  o aluno “Cardoso” está na lista com a nota marcada.
+
+Linha adicionada para corrigir discrepancia
+
+
