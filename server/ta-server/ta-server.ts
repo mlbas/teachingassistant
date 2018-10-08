@@ -19,7 +19,6 @@ app.use(allowCrossDomain);
 app.use(bodyParser.json());
 
 app.get('/alunos', function (req, res) {
-  console.log('GET /alunos: ' + req)
   res.send(JSON.stringify(cadastro.getAlunos()));
 })
 
@@ -43,8 +42,12 @@ app.put('/aluno', function (req: express.Request, res: express.Response) {
   }
 })
 
-app.listen(3000, function () {
+var server = app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 })
 
-export { app }
+function closeServer(): void {
+   server.close();
+}
+
+export { app, server, closeServer }
