@@ -17,6 +17,7 @@ export class AlunosComponent implements OnInit {
    cpfduplicado: boolean = false;
 
    criarAluno(a: Aluno): void {
+     //console.log(a);
      this.alunoService.criar(a)
         .then(ab => {
            if (ab) {
